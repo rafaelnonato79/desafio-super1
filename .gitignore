@@ -1,0 +1,35 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de logs
+*.log
+
+# Diretórios de dependências
+node_modules/
+vendor/
+
+# Arquivos compilados
+*.o
+*.out
+*.exe
+*.class
+*.dll
+
+# Arquivos de configuração do IDE
+.vscode/
+.idea/
+
+# Arquivos de compilação temporários
+*.tmp
+*.bak
+
+# Arquivos de banco de dados
+*.sqlite
+*.db
+
+# Arquivos de credenciais
+*.env
+
+# Arquivos do sistema de controle de versão do Git
+.git/
