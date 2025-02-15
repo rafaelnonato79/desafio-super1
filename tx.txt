@@ -1,0 +1,5 @@
+Vue
+TypeScript
+Swiper
+FontaWesome
+Vue Slick Carousel

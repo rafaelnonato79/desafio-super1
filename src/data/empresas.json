@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "image": "riocenter.webp",
+        "name": "Rio Center"
+    },
+    {
+        "id": 2,
+        "image": "ecologica.webp",
+        "name": "Ecologica"
+    },
+    {
+        "id": 3,
+        "image": "mister_castanha.webp",
+        "name": "Mister Castanha"
+    },
+    {
+        "id": 4,
+        "image": "petclive.webp",
+        "name": "Petclive Clínica Veretinária 24 horas"
+    },
+    {
+        "id": 5,
+        "image": "organizare.webp",
+        "name": "Organizzare"
+    },
+    {
+        "id": 6,
+        "image": "mimimey.webp",
+        "name": "Mimimey - Moda e Acessórios"	
+    },
+    {
+        "id": 7,
+        "image": "oticas.webp",
+        "name": "Ótivas D'Mais"
+    },
+    {
+        "id": 8,
+        "image": "auriAutopecas.webp",
+        "name": "Auri Auto Peças"
+    },
+    {
+        "id": 9,
+        "image": "nlMultimarcas.webp",
+        "name": "NL Multimarcas"
+    },
+    {
+        "id": 10,
+        "image": "vermais.png",
+        "name": "Ver mais empresas "
+    }
+]

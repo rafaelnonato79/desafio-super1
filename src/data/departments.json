@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Saúde e Bem-estar",
+        "itens":[
+            {
+                "id": 1,
+                "name":"Beleza"
+            },
+            {
+                "id": 2,
+                "name":"Cuidados Pessoais"
+            },
+            {
+                "id": 3,
+                "name":"Esportes e Aventura"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Estilo",
+        "itens":[
+            {
+                "id": 1,
+                "name":"Vestuário"
+            },
+            {
+                "id": 2,
+                "name":"Calçados"
+            },
+            {
+                "id": 3,
+                "name":"Bijuterias e Acessórios"
+            }
+        ]
+    },{
+        "id": 3,
+        "name": "Eletro",
+        "itens":[
+            {
+                "id": 1,
+                "name":"Eletrodomésticos"
+            },
+            {
+                "id": 2,
+                "name":"Celulares, Tablets e Ace..."
+            },
+            {
+                "id": 3,
+                "name":"Câmeras e Acessórios"
+            }
+        ]
+    },{
+        "id": 4,
+        "name": "Casa",
+        "itens":[
+            {
+                "id": 1,
+                "name":"Casa, Jardim e Limpeza"
+            },
+            {
+                "id": 2,
+                "name":"Móveis e Decoração"
+            },
+            {
+                "id": 3,
+                "name":"Construção"
+            }
+        ]
+    },{
+        "id": 5,
+        "name": "Tincidunt",
+        "itens":[
+            {
+                "id": 1,
+                "name":"Tempor"
+            },
+            {
+                "id": 2,
+                "name":"Consequatt"
+            }
+        ]
+    },{
+        "id": 6,
+        "name": "Ipsum Lorem",
+        "itens":[
+            {
+                "id": 1,
+                "name":"Site Amet"
+            },
+            {
+                "id": 2,
+                "name":"Consequat"
+            },
+            {
+                "id": 3,
+                "name":"Pellentesque"
+            }
+        ]
+    }
+]
