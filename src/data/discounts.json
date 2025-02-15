@@ -1,0 +1,60 @@
+[
+    {
+      "id": 1,
+      "image": "garrafaDeAreia.png",
+      "description": "Garrafa de areia colorida",
+      "valor_antigo": "R$ 32,90",
+      "desconto": "10% OFF",
+      "frase_valor": "",
+      "valor": "R$ 29,61",
+      "forma_de_pagamento_1": "3 x R$6,33 sem juros no cart...",
+      "forma_de_pagamento_2": "ou R$ 18,50 no pix",
+      "vendido_por": "Sr. Castanha"
+    },
+    {
+      "id": 2,
+      "image": "bolsas.png",
+      "description": "Bolsas variadas de fibra de Açaí",
+      "valor_antigo": "",
+      "desconto": "",
+      "frase_valor": "A partir de",
+      "valor": "R$ 49,90",
+      "forma_de_pagamento_1": "2 x R$24,95 sem juros no ca...",
+      "forma_de_pagamento_2":"ou R$ 38,50 no pix",
+      "vendido_por": "Dandadara"
+    },
+    {
+      "id": 3,
+      "image": "galinha.png",
+      "description": "Galinha e pintinhos de barro feitas a mão",
+      "valor_antigo": "R$ 32,90",
+      "desconto": "10% OFF",
+      "frase_valor": "",
+      "valor": "R$ 14,90",
+      "forma_de_pagamento_1": "ou R$ 13,00 no pix",
+      "vendido_por": "Patrícia Arte"
+    },
+    {
+      "id": 4,
+      "image": "panelas.png",
+      "description": "Panelas de barro de São Gonçalo do Am...",
+      "valor_antigo": "",
+      "desconto": "",
+      "frase_valor": "Apenas",
+      "valor": "R$ 29,90",
+      "forma_de_pagamento_1": "2 x R$16,95 no cartão ou R$ 23,90 no pix",
+      "vendido_por": "Sebastião Salg..."
+    },
+    {
+      "id": 5,
+      "image": "bonecas.png",
+      "description": "Artesanato de bonecas negras feit...",
+      "valor_antigo": "",
+      "desconto": "",
+      "frase_valor": "A partir de",
+      "valor": "R$ 9,90",
+      "forma_de_pagamento_1": "2 x R$7,45 no cartão",
+      "vendido_por": "Manu Intimates"
+    }
+  ]
+  

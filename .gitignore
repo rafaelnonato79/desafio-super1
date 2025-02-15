@@ -1,35 +1,31 @@
-# Arquivos de sistema
-.DS_Store
-Thumbs.db
-
-# Arquivos de logs
+# Logs
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Diretórios de dependências
-node_modules/
-vendor/
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
 
-# Arquivos compilados
-*.o
-*.out
-*.exe
-*.class
-*.dll
+/cypress/videos/
+/cypress/screenshots/
 
-# Arquivos de configuração do IDE
-.vscode/
-.idea/
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Arquivos de compilação temporários
-*.tmp
-*.bak
-
-# Arquivos de banco de dados
-*.sqlite
-*.db
-
-# Arquivos de credenciais
-*.env
-
-# Arquivos do sistema de controle de versão do Git
-.git/
+*.tsbuildinfo
+>>>>>>> master
