@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Category } from "@types/categories.types"; 
+import type { Category } from "../types/categories.types"; 
 import { getCategories } from "@/http/index";
 import { onMounted, ref } from "vue";
 
