@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="content pl-[50px] pt-[40px] w-full h-[530px] max-md:pl-[20px]">
-      <h2 class="text-3xl text-white font-normal">Descontos cliente <span class="font-bold">Unimed Natal</span></h2>
+    <div class="content pl-[50px] pt-[40px] w-full h-[530px] max-md:pl-0">
+      <h2 class="text-3xl text-white font-normal max-md:text-2xl max-md:ml-[15px]">Descontos cliente <span class="font-bold">Unimed Natal</span></h2>
       <ul class="mt-[31px] flex gap-[14.45px] flex-wrap">
         <li v-for="(item, index) in items" :key="item.id" class="w-[207px] h-[390px] bg-white flex flex-col items-center rounded-sm">
             <div class="relative">

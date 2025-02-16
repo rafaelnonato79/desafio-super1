@@ -81,4 +81,13 @@ const modules = [Navigation, Autoplay];
   .swiper-button-prev {
   left: 1px;
   }
+
+  @media (max-width: 750px){
+    .carousel-container{
+      margin-top:0;
+    }
+    .mySwiper .swiper-slide{
+      height: 150px;
+    }
+  }
 </style>

@@ -3,14 +3,15 @@
   <header class="fixed top-0 w-full z-50 bg-white">
     <div class="bg-orange-500 h-[8px]">
     </div>
-    <NavBar />
+    <NavBarMobile/>
+    <NavBar/>
   </header>
-  <main class="flex flex-col justify-center items-center mt-[182px]">
+  <main class="flex flex-col justify-center items-center mt-[182px] max-md:mt-[100px]">
     <CarouselBanner/>
 
-    <CategoriesList class="mt-[40px]"/>
+    <CategoriesList/>
 
-    <DiscountList class="mt-[88px]"/>
+    <DiscountList class="mt-[88px] max-md:mt-[35px]"/>
     
   </main>
 </template>
@@ -20,6 +21,7 @@ import NavBar from '@/components/NavBar.vue'
 import CarouselBanner from '@/components/CarouselBanner.vue';
 import CategoriesList from '@/components/CategoriesList.vue';
 import DiscountList from '@/components/DiscountList.vue';
+import NavBarMobile from '@/components/NavBarMobile.vue';
 </script>
 
 <style>

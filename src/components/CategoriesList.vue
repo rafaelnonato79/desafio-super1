@@ -1,11 +1,17 @@
 <template>
-    <div class="container">
-       <ul class="flex space-x-[10px] flex-wrap">
+    <div class="container mt-[40px] max-md:mt-[20px]">
+
+    <!------- Mobile ------------>
+        <CarouselCategorie class="mobile"/>
+
+
+     <!-------- Desktop ------------->
+       <ul class="flex space-x-auto justify-center desktop">
         <li 
         v-for="category in categories" 
         :key="category.id" 
-        class="category-item w-[110px] flex flex-col items-center cursor-pointer ">
-            <div class="category-image-wrapper w-[96px] h-[96px] bg-[#EAE0D5] rounded-full flex justify-center items-center hover:bg-[#E7680C] transition-all text-white">
+        class="category-item  w-[110px]  flex flex-col items-center cursor-pointer ">
+            <div class="category-image-wrapper w-[96px] h-[96px] bg-[#EAE0D5] rounded-full flex justify-center items-center hover:bg-[#E7680C] transition-all text-white ">
                 <img
                 :src="category.image" 
                 :alt="category.description"
@@ -21,6 +27,7 @@
 import type { Category } from "../types/categories.types"; 
 import { getCategories } from "@/http/index";
 import { onMounted, ref } from "vue";
+import CarouselCategorie from "@/components/CarouselCategorie.vue";
 
 const categories = ref<Category[]>([]);
 
@@ -32,13 +39,17 @@ onMounted( async () => {
 </script>
 
 <style scoped>
+
+    .mobile{
+        display: none;
+    }
     .container{
         max-width: 1200px;
     }
     p{
         font-family: "Source Sans 3";
     }
-
+    
     .category-item .category-image-wrapper {
   transition: background-color 0.3s ease;
     }
@@ -64,17 +75,37 @@ onMounted( async () => {
         .container{
             max-width: 900px;
         }
+        .category-image-wrapper{
+            width: 80px;
+            height: 80px;
+        }
     }
     @media (max-width: 900px) {
     .container {
         max-width: 800px;
     }
+    .category-image-wrapper{
+            width: 70px;
+            height: 70px;
+        }
     }
     @media (max-width: 800px) {
     .container {
         max-width: 750px;
+     }
     }
-    
+    @media (max-width: 750px){
+        .container{
+            max-width: 700px;
+        }
+        .desktop{
+            display: none;
+        }
+        .mobile{
+            display: block;
+        }
+        
     }
+
 
 </style>

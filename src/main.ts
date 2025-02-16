@@ -11,8 +11,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faAngleDown, faBars} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
-
-library.add(faBars, faAngleDown, faHeartSolid, faHeartRegular);
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+library.add(faBars, faAngleDown, faHeartSolid, faHeartRegular, faMagnifyingGlass);
 
 const app = createApp(App)
 

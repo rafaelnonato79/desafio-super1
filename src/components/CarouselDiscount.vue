@@ -26,9 +26,9 @@
             <swiper-slide 
             v-for="(item, index) in items" 
             :key="item.id" 
-            class="w-[207px] h-[390px] bg-white flex flex-col items-center rounded-sm">
+            class="w-[207px] h-[390px] bg-white flex flex-col items-center rounded-sm max-md:w-[150px] max-md:h-[340px] max-md:rounded-md">
             
-            <div class="bg-white w-[207px] flex flex-col justify-center items-center rounded-sm">
+            <div class="bg-white w-[207px] flex flex-col justify-start items-center rounded-sm max-md:w-[180px] max-md:h-[320px] max-md:rounded-md">
               <div class="relative">
                   <img :src="item.image" alt="Imagem do Produto"/>
                   
@@ -42,22 +42,22 @@
                   </div>
               </div>
     
-              <div class="w-[177px] mt-[13px]">
+              <div class="w-[177px] mt-[13px] max-md:w-[150px] max-md:mt-[5px]">
                   <div class="w-[169px]">
-                    <p class="text-lg text-[#3F3F3F] font-normal">{{ item.description }}</p>
+                    <p class="text-lg text-[#3F3F3F] font-normal max-md:text-sm">{{ item.description }}</p>
                   </div>
                   <div class="flex space-x-[5px]">
-                    <s v-if="item.valor_antigo" class="text-[#3F3F3F] text-sm font-normal">{{ item.valor_antigo }}</s>
-                    <p v-if="item.desconto" class="text-sm font-normal text-[#CC0A12]">{{ item.desconto }}</p>
-                    <p v-if="item.frase_valor" class="text-[#3F3F3F] text-sm font-normal">{{ item.frase_valor }}</p>
+                    <s v-if="item.valor_antigo" class="text-[#3F3F3F] text-sm font-normal max-md:text-xs">{{ item.valor_antigo }}</s>
+                    <p v-if="item.desconto" class="text-sm font-normal text-[#CC0A12] max-md:text-xs">{{ item.desconto }}</p>
+                    <p v-if="item.frase_valor" class="text-[#3F3F3F] text-sm font-normal max-md:text-sm">{{ item.frase_valor }}</p>
                   </div>
-                  <p class="text-[1.625rem] font-semibold text-[#3F3F3F]">{{ item.valor }}</p>
-                  <div class="pagamento h-[28px]">
-                    <p class="text-[#3F3F3F] text-sm font-normal h-[14px]">{{ item.forma_de_pagamento_1 }}</p>
-                    <p class="text-[#3F3F3F] text-sm font-normal h-[14px]">{{ item.forma_de_pagamento_2 }}</p>
+                  <p class="text-[1.625rem] font-semibold text-[#3F3F3F] max-md:text-lg">{{ item.valor }}</p>
+                  <div class="pagamento h-[28px] max-md:w-[160px]">
+                    <p class="text-[#3F3F3F] text-sm font-normal h-[14px] max-md:text-xs">{{ item.forma_de_pagamento_1 }}</p>
+                    <p class="text-[#3F3F3F] text-sm font-normal h-[14px] max-md:text-xs">{{ item.forma_de_pagamento_2 }}</p>
                   </div>
-                  <p class="text-[#3F3F3F] text-sm font-normal mt-[15px]">Vendido por: 
-                      <span class="underline decoration-solid text-[#3F3F3F]">{{ item.vendido_por }}</span>
+                  <p class="text-[#3F3F3F] text-sm font-normal mt-[15px] max-md:mt-[10px]">Vendido por: 
+                      <span class="underline decoration-solid text-[#3F3F3F] max-md:text-xs">{{ item.vendido_por }}</span>
                   </p>
               </div>
             </div>
@@ -167,6 +167,10 @@ const toggleFavorite = (index: number) => {
     .mySwiper, .swiper-slide{
         max-width: 100%;
     }
-    
 }
+@media (max-width: 750px){
+    .carousel-container{
+        margin-top:0;
+    }
+  }
 </style>

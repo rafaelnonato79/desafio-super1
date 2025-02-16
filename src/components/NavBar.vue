@@ -1,5 +1,5 @@
 <template>
-    <nav class="flex flex-col items-center">
+    <nav class="flex flex-col items-center desktop">
         <div class="bg-[#EAE0D5] flex justify-center items-center h-[108px] w-full">
             <div class="flex justify-start items-center space-x-[30px] container">
                 <img 
@@ -9,34 +9,48 @@
                 onclick="window.location.href='/'">
                 <div class="divInput relative max-width-[522px] w-[522px] max-md:w-[450px]">
                     <input type="text" 
-                    placeholder="O que você gostaria hoje? " class="bg-white h-[54px] rounded-full px-[20px] text-lg shadow-xl w-full max-md:text-sm"
+                    placeholder="O que você gostaria hoje? " class="bg-white h-[54px] rounded-full px-[20px] text-lg shadow-xl w-full max-md:text-sm max-md:placeholder-transparent"
                     />
                     <img
                     src="../assets/icons/search.svg" 
-                    class="absolute right-[20px] top-1/2 transform -translate-y-1/2 text-gray-500 text-xl" />
+                    class="absolute right-[20px] top-1/2 transform -translate-y-1/2 text-gray-500 text-xl"/>
                 </div>
-                <div class="flex justify-between items-center space-x-[10px] cursor-pointer ">
+
+                <!-- Localização -->
+                <div class="flex justify-between items-center space-x-[10px] cursor-pointer "@click.stop="toggleLocationDropdownd">
                     <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center">
                         <img src="../assets/icons/localization.svg" alt="">
                     </div>
-                    <div>
+                    <div class="w-[65px]">
                         <p class="text-base text-[#3F3F3F] font-semibold max-md:text-sm">Onde</p>
                         <p class="text-base text-[#3F3F3F] max-md:text-sm">você está</p>
                     </div>
+                    <div v-if="isLocationDropdownOpen" ref="locationRef" class="absolute top-[90px] bg-white shadow-md p-4 rounded-md w-[250px] z-10">
+                    <p>Digite seu endereço ou CEP para encontrar lojas próximas.</p>
+                    <input type="text" class="border p-2 w-full mt-2" placeholder="Ex: 01000-000">
+                    <button class="bg-[#F47920] text-white px-4 py-2 mt-2 w-full rounded-md">Confirmar</button>
                 </div>
-                <div class="flex justify-between items-center space-x-[10px] cursor-pointer ">
+                </div>
+
+                <!-- Login -->
+                <div class="flex justify-between items-center space-x-[10px] cursor-pointer " @click.stop="toggleLogin">
                     <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center">
                         <img src="../assets/icons/user.svg" 
                         alt="icone usuario"
                         class="mt-[4px]">
                     </div>
-                    <div>
+                    <div class="w-[100px]">
                         <p class="text-base text-[#3F3F3F] font-semibold max-md:text-sm">Faça login</p>
                         <p class="text-base text-[#3F3F3F] max-md:text-sm">ou cadastre-se</p>
                     </div>
+                    <div v-if="isLoginOpen" ref="loginRef" class="absolute top-[90px] bg-white shadow-md p-4 rounded-md w-[250px] z-10">
+                        <input type="text" class="border p-2 w-full" placeholder="Digite seu CPF">
+                        <input type="password" class="border p-2 w-full mt-2" placeholder="Digite sua senha">
+                        <button class="bg-[#F47920] text-white px-4 py-2 mt-2 w-full rounded-md">Prosseguir</button>
+                    </div>
                 </div>
                 <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center cursor-pointer">
-                    <img src="../assets/icons/car.svg" alt="">
+                    <img src="../assets/icons/car.svg" alt="" class="m-5">
                 </div>
             </div>
         </div>
@@ -63,18 +77,43 @@
 import MenuSuspenso from './MenuSuspenso.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const isMenuOpen = ref(false);
+const isMenuOpen = ref(false); // para desktop
+
 const menuRef = ref<HTMLElement | null>(null);
+
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
 }
 
-//Detecar clique fora
+const isLocationDropdownOpen = ref(false);
+const locationRef = ref<HTMLElement | null>(null);
+
+const isLoginOpen = ref(false);
+const loginRef = ref<HTMLElement | null>(null);
+
+const toggleLogin = () => {
+    isLoginOpen.value = !isLoginOpen.value;
+    isLocationDropdownOpen.value = false;
+}
+
+
+const toggleLocationDropdownd = () => {
+    isLocationDropdownOpen.value = !isLocationDropdownOpen.value;
+    isLoginOpen.value = false;
+}
+
+//detectar clique fora
 
 const handleClickOutside = (event: MouseEvent) => {
     if (menuRef.value && !menuRef.value.contains(event.target as Node)) {
         isMenuOpen.value = false;
+    }
+    if (locationRef.value && !locationRef.value.contains(event.target as Node)) {
+        isLocationDropdownOpen.value = false;
+    }
+    if (loginRef.value && !loginRef.value.contains(event.target as Node)) {
+        isLoginOpen.value = false;
     }
 }
 
@@ -91,6 +130,9 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+    .menu-mobile{
+        display: none;
+    }
     .container{
         max-width: 1200px;
     }
@@ -120,6 +162,20 @@ onUnmounted(() => {
     .container {
         max-width: 750px;
     }
-    
+}
+    @media (max-width: 700px) {
+        .container {
+            max-width: 600px;
+        }
+        .desktop{
+            display: none;
+        }
+    }
+    @media (max-width: 600px) {
+        .container {
+            max-width: 400px;   
+        }
+        
+
 }
 </style>
