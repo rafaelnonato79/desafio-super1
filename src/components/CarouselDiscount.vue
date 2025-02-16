@@ -7,7 +7,7 @@
           :loop="true" 
           :loopedSlides="items.length"
           :space-between="20"
-          :autoplay=false
+          :autoplay="{ delay: 3000, disableOnInteraction: false }"
           :breakpoints="{
           '320': {
             slidesPerView: 2,
