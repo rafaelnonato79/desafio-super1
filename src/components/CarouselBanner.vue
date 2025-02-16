@@ -86,8 +86,5 @@ const modules = [Navigation, Autoplay];
     .carousel-container{
       margin-top:0;
     }
-    .mySwiper .swiper-slide{
-      height: 150px;
-    }
   }
 </style>
