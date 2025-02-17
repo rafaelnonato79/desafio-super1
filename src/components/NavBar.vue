@@ -74,9 +74,8 @@
             <MenuSuspenso v-if="isMenuOpen"/>
         </div>
 
-        <div v-if="isCarOpen" class="w-[100vw] h-[100vh] fixed insert-0 bg-gray-800/50 top-0">
-            <Carrinho v-if="isCarOpen" ref="carRef"/>
-        </div>
+        
+        <Carrinho v-if="isCarOpen" ref="carRef"/>
     </nav>
 
 </template>
@@ -129,9 +128,6 @@ const handleClickOutside = (event: MouseEvent) => {
     }
     if (loginRef.value && !loginRef.value.contains(event.target as Node)) {
         isLoginOpen.value = false;
-    }
-    if(carRef.value && !carRef.value.$el.contains(event.target as Node)){
-        isCarOpen.value = false;
     }
 }
 

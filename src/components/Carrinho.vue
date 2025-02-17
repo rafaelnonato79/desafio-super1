@@ -1,5 +1,12 @@
 <template>
+
+<!-- overlay -->
+        <div 
+            v-if="isCarOpen" 
+            class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40"
+            @click="toggleCar" ></div>
     
+            <!-- Carrinho -->
     <div class="bg-[#FAF7F4] w-[423px] max-md:w-[100vw] h-[100vh] fixed top-0 right-0 z-50" v-if="isCarOpen" ref="carRef">
         <div class="bg-orange-500 h-[8px]">
         </div>
@@ -16,7 +23,7 @@
             
             <!-- PRODUTOS  -->
             <div class="produtos mt-[20px] bg-white space-y-[20px]">
-                <div class="produto flex h-[120px] bg-white">
+                <div class="produto flex h-[95%] bg-white">
                     <img src="../assets/images/produtos/bolsa.svg" alt="">
                     <div class="w-full flex flex-col justify-center">
                         <div class="flex justify-between">
@@ -39,7 +46,7 @@
                 </div>
 
 
-                <div class="flex h-[120px] bg-white produto">
+                <div class="flex h-[95%] bg-white produto">
                     <img src="../assets/images/produtos/brinquedo.png" alt="">
                     <div class="w-full flex flex-col justify-center">
                         <div class="flex justify-between">
@@ -61,7 +68,7 @@
                     </div>     
                 </div>
 
-                <div class="flex h-[120px] bg-white produto">
+                <div class="flex h-[95%] bg-white produto">
                     <img src="../assets/images/produtos/lencol.png" alt="">
                     <div class="w-full flex flex-col justify-center">
                         <div class="flex justify-between">
@@ -83,7 +90,7 @@
                     </div>     
                 </div>
 
-                <div class="flex h-[120px] bg-white produto">
+                <div class="flex h-[95%] bg-white produto">
                     <img src="../assets/images/produtos/mousse.png" alt="">
                     <div class="w-full flex flex-col justify-center">
                         <div class="flex justify-between">
@@ -108,7 +115,7 @@
 
                 
 
-                <div class="flex h-[120px] bg-white produto">
+                <div class="flex h-[95%] bg-white produto">
                     <img src="../assets/images/produtos/voucher.png" alt="">
                     <div class="w-full flex flex-col justify-center">
                         <div class="flex justify-between">
@@ -160,7 +167,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, onUnmounted, onMounted } from 'vue';
 
 const isCarOpen = ref(true);
 const carRef = ref<HTMLElement | null>(null);
@@ -169,6 +176,19 @@ const toggleCar = () => {
     isCarOpen.value = !isCarOpen.value;
 }
 
+const isHandleClickOutside = (e: MouseEvent) => {
+    if (carRef.value && !carRef.value.contains(e.target as Node)) {
+        isCarOpen.value = false;
+    }
+}
+
+onMounted(() => {
+    document.addEventListener('click', isHandleClickOutside);
+})
+
+onUnmounted(() => {
+    document.removeEventListener('click', isHandleClickOutside);
+})
 
 const isFreteOpen = ref(false);
 const freteRef =  ref<HTMLElement | null>(null);

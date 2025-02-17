@@ -1,4 +1,6 @@
 <template>
+
+    
     <nav class="flex flex-col items-center menu-mobile">
         <div class="bg-[#EAE0D5] flex justify-center items-center h-[50px] w-full px-[10px]">
             <div class="flex justify-center items-center space-x-[10px] container ">
