@@ -10,7 +10,7 @@
     <div class="bg-[#FAF7F4] w-[423px] max-md:w-[100vw] h-[100vh] fixed top-0 right-0 z-50" v-if="isCarOpen" ref="carRef">
         <div class="bg-orange-500 h-[8px]">
         </div>
-        <div class="content p-[20px]">
+        <div class="content p-[20px] flex flex-col h-full">
             <div class="flex items-center">
                 <img src="../assets/images/logoCarrinho.png" alt="logo" class="w-[42px]">
                 <img src="../assets/images/passo-carrinho.png" alt="" class="ml-[25px]">
@@ -22,7 +22,7 @@
             </div>
             
             <!-- PRODUTOS  -->
-            <div class="produtos mt-[20px] bg-white space-y-[20px]">
+            <div class="produtos mt-[20px] bg-white space-y-[20px] flex-grow overflow-y-auto">
                 <div class="produto flex h-[95%] bg-white">
                     <img src="../assets/images/produtos/bolsa.svg" alt="">
                     <div class="w-full flex flex-col justify-center">
@@ -140,7 +140,7 @@
 
             <!-- Calculo de frete -->
              <div class="absolute bottom-0 w-full pb-[20px]">
-                 <div class="frete bg-[#FAF7F4] h-[150px] relative ">
+                 <div class="frete bg-[#FAF7F4] h-[150px] relative mt-auto">
                     <div class="space-y-[20px] relative after:content-[''] after:block after:w-full after:h-[1px] after:bg-[#E5E5E5] after:absolute after:left-0 after:top-full after:mt-[10px]">
                         <div class="flex items-center justify-between pr-[40px] cursor-pointer"  >
                             <div class="flex space-x-[10px] items-center justify-center" @click="toggleFrete">
