@@ -6,9 +6,11 @@
     :loop="true" 
     :space-between="30"
     :autoplay="false"
+    :centeredSlides="true"
+    :slidesPerView="'auto'"
     :breakpoints="{
        '250':{
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 10
          },
       '440': {
