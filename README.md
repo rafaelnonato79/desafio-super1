@@ -1,7 +1,7 @@
 
 # 🛍️ DESAFIO SUPER1 - Frontend
 
-**Demonstração:*** [Clique aqui para acessar o projeto](https://desafio-super1.vercel.app/)
+**Demonstração:*** [Clique aqui para acessar o projeto](https://desafio-super1-wbgt.vercel.app/)
 
 Este projeto foi desenvolvido como parte do desafio técnico para a vaga de **Frontend** na **Super1**. O objetivo foi criar um site responsivo seguindo o **design do Figma**, implementando funcionalidades interativas e otimizadas para desktop e mobile.
 
