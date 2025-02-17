@@ -12,7 +12,11 @@ import { faAngleDown, faBars} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-library.add(faBars, faAngleDown, faHeartSolid, faHeartRegular, faMagnifyingGlass);
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+library.add(faBars, faAngleDown, faHeartSolid, faHeartRegular, faMagnifyingGlass, faPlus, faArrowRight, faTrashCan, faTrash);
 
 const app = createApp(App)
 

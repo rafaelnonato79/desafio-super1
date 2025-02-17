@@ -38,13 +38,15 @@
                                 class="mt-[4px]">
                             </div>
                         </div>
-                        <div v-if="isLoginOpen" ref="isLoginRef" class="absolute top-[60px] right-0 bg-white shadow-md p-4 rounded-md w-[250px] z-10">
+                        <div v-if="isLoginOpen" ref="loginRef" class="absolute top-[60px] right-0 bg-white shadow-md p-4 rounded-md w-[250px] z-10">
                             <input type="text" class="border p-2 w-full" placeholder="Digite seu CPF">
                             <input type="password" class="border p-2 w-full mt-2" placeholder="Digite sua senha">
                             <button class="bg-[#F47920] text-white px-4 py-2 mt-2 w-full rounded-md">Prosseguir</button>
                          </div>
                     </div>
-                    <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center cursor-pointer">
+
+                    <!-- CARRINHO -->
+                    <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center cursor-pointer" @click.stop="toggleCar">
                         <img src="../assets/icons/car.svg" alt="">
                     </div>
                 </div>
@@ -75,12 +77,17 @@
         <div v-if="isMenuOpen" ref="menuRef">
             <MenuSuspenso v-if="isMenuOpen"/>
         </div>
+            <Carrinho v-if="isCarOpen" ref="carRef"/>
     </nav>
 
 </template>
 
 <script setup lang="ts">
 import MenuSuspenso from './MenuSuspenso.vue';
+import Carrinho from './Carrinho.vue';
+
+
+
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const isMenuOpen = ref(false); // para desktop
@@ -94,6 +101,16 @@ const searchRef = ref<HTMLElement | null>(null);
 
 const isLoginOpen = ref(false);
 const loginRef = ref<HTMLElement | null>(null);
+
+const isCarOpen = ref(false);
+const carRef = ref<HTMLElement | null>(null);
+
+const toggleCar = () => {
+    isCarOpen.value = !isCarOpen.value;
+    isLocationDropdownOpen.value = false;
+    isLoginOpen.value = false;
+    isSearchOpen.value = false;
+}
 
 const toggleLogin = () => {
     isLoginOpen.value = !isLoginOpen.value;

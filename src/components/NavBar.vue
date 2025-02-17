@@ -17,39 +17,43 @@
                 </div>
 
                 <!-- Localização -->
-                <div class="flex justify-between items-center space-x-[10px] cursor-pointer "@click.stop="toggleLocationDropdownd">
-                    <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center">
-                        <img src="../assets/icons/localization.svg" alt="">
-                    </div>
-                    <div class="w-[65px]">
-                        <p class="text-base text-[#3F3F3F] font-semibold max-md:text-sm">Onde</p>
-                        <p class="text-base text-[#3F3F3F] max-md:text-sm">você está</p>
+                <div class="flex justify-between items-center space-x-[10px] cursor-pointer ">
+                    <div class="flex justify-between items-center space-x-[10px] cursor-pointer" @click.stop="toggleLocationDropdownd">
+                        <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center">
+                            <img src="../assets/icons/localization.svg" alt="">
+                        </div>
+                        <div class="w-[65px]">
+                            <p class="text-base text-[#3F3F3F] font-semibold max-md:text-sm">Onde</p>
+                            <p class="text-base text-[#3F3F3F] max-md:text-sm">você está</p>
+                        </div>
                     </div>
                     <div v-if="isLocationDropdownOpen" ref="locationRef" class="absolute top-[90px] bg-white shadow-md p-4 rounded-md w-[250px] z-10">
                     <p>Digite seu endereço ou CEP para encontrar lojas próximas.</p>
                     <input type="text" class="border p-2 w-full mt-2" placeholder="Ex: 01000-000">
                     <button class="bg-[#F47920] text-white px-4 py-2 mt-2 w-full rounded-md">Confirmar</button>
-                </div>
+                    </div>
                 </div>
 
                 <!-- Login -->
-                <div class="flex justify-between items-center space-x-[10px] cursor-pointer " @click.stop="toggleLogin">
-                    <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center">
-                        <img src="../assets/icons/user.svg" 
-                        alt="icone usuario"
-                        class="mt-[4px]">
-                    </div>
-                    <div class="w-[100px]">
-                        <p class="text-base text-[#3F3F3F] font-semibold max-md:text-sm">Faça login</p>
-                        <p class="text-base text-[#3F3F3F] max-md:text-sm">ou cadastre-se</p>
+                <div class="flex justify-between items-center space-x-[10px] cursor-pointer " >
+                    <div class="flex justify-between items-center space-x-[10px] cursor-pointer" @click.stop="toggleLogin">
+                        <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center">
+                            <img src="../assets/icons/user.svg" 
+                            alt="icone usuario"
+                            class="mt-[4px]">
+                        </div>
+                        <div class="w-[100px]">
+                            <p class="text-base text-[#3F3F3F] font-semibold max-md:text-sm">Faça login</p>
+                            <p class="text-base text-[#3F3F3F] max-md:text-sm">ou cadastre-se</p>
+                        </div>
                     </div>
                     <div v-if="isLoginOpen" ref="loginRef" class="absolute top-[90px] bg-white shadow-md p-4 rounded-md w-[250px] z-10">
                         <input type="text" class="border p-2 w-full" placeholder="Digite seu CPF">
                         <input type="password" class="border p-2 w-full mt-2" placeholder="Digite sua senha">
-                        <button class="bg-[#F47920] text-white px-4 py-2 mt-2 w-full rounded-md">Prosseguir</button>
+                        <button class="bg-[#F47920] text-white px-4 py-2 mt-2 w-full rounded-md cursor-pointer">Prosseguir</button>
                     </div>
                 </div>
-                <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center cursor-pointer">
+                <div class="bg-white rounded-full w-[36px] h-[36px] flex justify-center items-center cursor-pointer" @click.stop="toggleCar">
                     <img src="../assets/icons/car.svg" alt="" class="m-5">
                 </div>
             </div>
@@ -69,11 +73,16 @@
         <div v-if="isMenuOpen" ref="menuRef">
             <MenuSuspenso v-if="isMenuOpen"/>
         </div>
+
+        <div v-if="isCarOpen" class="w-[100vw] h-[100vh] fixed insert-0 bg-gray-800/50 top-0">
+            <Carrinho v-if="isCarOpen" ref="carRef"/>
+        </div>
     </nav>
 
 </template>
 
 <script setup lang="ts">
+import Carrinho from '@/components/Carrinho.vue';
 import MenuSuspenso from './MenuSuspenso.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
 
@@ -81,6 +90,12 @@ const isMenuOpen = ref(false); // para desktop
 
 const menuRef = ref<HTMLElement | null>(null);
 
+const isCarOpen = ref(false);
+const carRef = ref<HTMLElement | null>(null);
+
+const toggleCar = () => {
+    isCarOpen.value = !isCarOpen.value;
+}
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
@@ -114,6 +129,9 @@ const handleClickOutside = (event: MouseEvent) => {
     }
     if (loginRef.value && !loginRef.value.contains(event.target as Node)) {
         isLoginOpen.value = false;
+    }
+    if(carRef.value && !carRef.value.$el.contains(event.target as Node)){
+        isCarOpen.value = false;
     }
 }
 
