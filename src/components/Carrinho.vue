@@ -22,7 +22,7 @@
             </div>
             
             <!-- PRODUTOS  -->
-            <div class="produtos mt-[20px] bg-white space-y-[20px] flex-grow overflow-y-auto">
+            <div class="produtos mt-[20px] bg-white space-y-[20px]">
                 <div class="produto flex h-[95%] bg-white">
                     <img src="../assets/images/produtos/bolsa.svg" alt="">
                     <div class="w-full flex flex-col justify-center">
@@ -218,7 +218,7 @@ h1, span, p{
 }
 
 .produtos {
-    max-height: 500px;
+    /*max-height: 500px;*/
     overflow-y: auto; 
     padding-right: 10px;
 }
