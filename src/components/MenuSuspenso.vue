@@ -123,7 +123,7 @@
                         <p class="text-lg text-[#737373] font-normal">Agro e Indústroa</p>
                     </li>
                  </ul>
-                 <p class="text-sm text-regular text-[#737373] underline">Ver todos os departamentos</p>
+                 <p class="text-sm text-regular text-[#737373] underline cursor-pointer">Ver todos os departamentos</p>
              </div>
         </div>
         
