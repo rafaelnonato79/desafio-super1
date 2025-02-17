@@ -218,7 +218,7 @@ h1, span, p{
 }
 
 .produtos {
-    max-height: 400px;
+    max-height: 500px;
     overflow-y: auto; 
     padding-right: 10px;
 }
